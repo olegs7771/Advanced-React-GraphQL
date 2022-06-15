@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
-import styled, { ThemeProvider, injectGlobal } from 'styled-components';
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import Header from './Header';
 import Meta from './Meta';
 
@@ -27,6 +27,22 @@ const Inner = styled.div`
   background: ${(props) => props.theme.red};
   margin: 0 auto;
   padding: 2rem;
+`;
+
+createGlobalStyle`
+html{
+  box-sizing: border-box;
+  font-size:10px;
+}
+*,*:before,*:after{
+  box-sizing:inherit;
+
+}
+body{
+  padding:0;
+  margin: 0;
+}
+
 `;
 
 export default class Page extends Component {
