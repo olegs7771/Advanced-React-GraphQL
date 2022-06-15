@@ -29,7 +29,7 @@ const Inner = styled.div`
   padding: 2rem;
 `;
 
-createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
 html{
   box-sizing: border-box;
   font-size:10px;
@@ -41,6 +41,8 @@ html{
 body{
   padding:0;
   margin: 0;
+  font-size: 1.5rem;
+  line-height: 2;
 }
 
 `;
@@ -50,6 +52,7 @@ export default class Page extends Component {
     return (
       <ThemeProvider theme={theme}>
         <StylePage>
+          <GlobalStyle />
           <Meta />
           <Header />
           <Inner>{this.props.children}</Inner>
