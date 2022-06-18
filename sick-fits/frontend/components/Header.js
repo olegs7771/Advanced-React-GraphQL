@@ -55,18 +55,20 @@ const Header = () => (
       <p>Search</p>
     </div>
     <div>Cart</div>
-    <div onClick={() => NProgress.start()}>test</div>
   </StyledHeader>
 );
 
 Router.onRouteChangeStart = () => {
-  console.log('onRouteChangeStart');
+  // console.log('onRouteChangeStart');
   NProgress.start();
 };
 Router.onRouteChangeComplete = () => {
-  console.log('onRouteChangeComplete');
+  // console.log('onRouteChangeComplete');
+  NProgress.done();
 };
-Router.onRouteChangeStart = () => {
-  console.log('onRouteChangeStart');
+Router.onRouteChangeError = () => {
+  // console.log('onRouteChangeError');
+  NProgress.done();
 };
+
 export default Header;
