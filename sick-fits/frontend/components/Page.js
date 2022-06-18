@@ -2,6 +2,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
+
 import Header from './Header';
 import Meta from './Meta';
 
@@ -32,8 +33,8 @@ const Inner = styled.div`
 const GlobalStyle = createGlobalStyle`
 @font-face{
   font-family:'radnika_next';
-  src:url('/static/FontsFree-Net-radnika-next-medium.ttf')
-  format('ttf');
+  src:url('./static/radnikanext-medium-webfont.woff2')
+  format('woff2');
   font-weight: normal;
   font-style:normal;
 }
@@ -51,6 +52,11 @@ body{
   font-size: 1.5rem;
   line-height: 2;
   font-family: 'radnika_next';
+}
+
+a{
+  text-decoration:none;
+  color:${(props) => props.theme.black}
 }
 
 `;

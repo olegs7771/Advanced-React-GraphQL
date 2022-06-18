@@ -1,6 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
+import Router from 'next/router';
+import NProgress from 'nprogress';
 import Nav from './Nav';
 
 const Logo = styled.h1`
@@ -54,7 +55,18 @@ const Header = () => (
       <p>Search</p>
     </div>
     <div>Cart</div>
+    <div onClick={() => NProgress.start()}>test</div>
   </StyledHeader>
 );
 
+Router.onRouteChangeStart = () => {
+  console.log('onRouteChangeStart');
+  NProgress.start();
+};
+Router.onRouteChangeComplete = () => {
+  console.log('onRouteChangeComplete');
+};
+Router.onRouteChangeStart = () => {
+  console.log('onRouteChangeStart');
+};
 export default Header;
